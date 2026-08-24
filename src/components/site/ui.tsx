@@ -23,14 +23,16 @@ export function ActionLink({
   children,
   variant = "primary",
   className,
+  onClick,
 }: {
   to: string;
   children: ReactNode;
   variant?: Variant;
   className?: string;
+  onClick?: () => void;
 }) {
   return (
-    <Link to={to} className={cn(base, variants[variant], className)}>
+    <Link to={to} className={cn(base, variants[variant], className)} onClick={onClick}>
       {children}
     </Link>
   );
